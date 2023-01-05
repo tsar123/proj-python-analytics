@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
+        <title>Последние вакансии</title>
+    </head>
+    <body>
+        <header>
+            <div class="css-header">
+                <a href="http://127.0.0.1:8000/"><img src="https://1000logos.net/wp-content/uploads/2022/02/Logo-Yazilim-logo-2048x1152.jpg" width="160" height="100" alt="logo"></a>
+            </div>
+        </header>
+        <div class="container">
+            <div class="bar">
+                <nav>
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000/demand/">Востребованность</a></li>
+                        <li><a href="http://127.0.0.1:8000/geography/">География</a></li>
+                        <li><a href="http://127.0.0.1:8000/skills/">Навыки</a></li>
+                        <li><a href="http://127.0.0.1:8000/vacancy/">Последние вакансии</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="css-main">
+                <h1>DevOps-инженер</h1>
+                <h2>Последние вакансии</h2>
+                {% for post in vc %}
+                <div>
+                    <h3>Вакансия "{{ post.name }}"</h3>
+                    <ul>
+                        <li><a></a>{{ post.name }}</li>
+                        <li>Описание: {{ post.descriptions }}</li>
+                        <li>Навыки: {{ post.key_skills }}</li>
+                        <li>Компания: {{ post.department }}</li>
+                        <li>Оклад: {{ post.salary_from }} - {{ post.salary_to }}</li>
+                        <li>Регион: {{ post.area_name }}</li>
+                        <li>Дата публикации: {{ post.published_at }}</li>
+                    </ul>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <footer>
+            <div class="css-footer">
+              <div class="col-1-3">
+                    <a>@tsaregorodtsev</a>
+              </div>
+
+            </div>
+          </footer>
+    </body>
+</html>
