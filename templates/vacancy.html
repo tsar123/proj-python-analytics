@@ -26,16 +26,22 @@
             <div class="css-main">
                 <h1>DevOps-инженер</h1>
                 <h2>Последние вакансии</h2>
-                {% for post in vc %}
-                <div>
+                {% for post in items %}
+                <div class="vacancy">
                     <h3>Вакансия "{{ post.name }}"</h3>
                     <ul>
                         <li><a></a>{{ post.name }}</li>
-                        <li>Описание: {{ post.descriptions }}</li>
-                        <li>Навыки: {{ post.key_skills }}</li>
-                        <li>Компания: {{ post.department }}</li>
-                        <li>Оклад: {{ post.salary_from }} - {{ post.salary_to }}</li>
-                        <li>Регион: {{ post.area_name }}</li>
+                        <li>Описание: {{ post.snippet.responsibility }}</li>
+                        <li>Навыки: {{ post.snippet.requirement }}</li>
+                        <li>Компания: {{ post.employer.name }}</li>
+                        {% if post.salary.from == None %}
+                            <li>Оклад: {{ post.salary.to }}</li>
+                        {% elif post.salary.to == None %}
+                            <li>Оклад: {{ post.salary.from }}</li>
+                        {% else %}
+                            <li>Оклад: {{ post.salary.from }} - {{ post.salary.to }}</li>
+                        {% endif %}
+                        <li>Регион: {{ post.area.name }}</li>
                         <li>Дата публикации: {{ post.published_at }}</li>
                     </ul>
                 </div>
