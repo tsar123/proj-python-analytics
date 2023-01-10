@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from art.models import Vacancy
+from art.models import *
 
-# Register your models here.
 admin.site.register(Vacancy)
+admin.site.register(Geography)
+admin.site.register(VacancyRate)
