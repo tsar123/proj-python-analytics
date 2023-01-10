@@ -111,6 +111,7 @@ a {
 	background: #c3070d;
 	position: relative;
     margin-right: 7%;
+    padding-bottom: 7%;
 }
 
 .hexagon::before {
@@ -144,4 +145,46 @@ a {
 .hex {
     text-align: center;
     font-family: 'Inter Tight', sans-serif;
+}
+caption h4{
+    margin-bottom: 1.5%;
+}
+
+table{
+    border-collapse: collapse;
+    font-family: 'Inter Tight', sans-serif;
+    text-align: center;
+
+}
+th, td{
+    border: 1px solid;
+}
+
+.table1{
+    margin-left: 5%;
+}
+
+.graph1 {
+    text-align: center;
+    font-family: 'Inter Tight', sans-serif;
+    margin-left: 10%;
+}
+
+.table2{
+    clear: both;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.graph2{
+    text-align: center;
+    font-family: 'Inter Tight', sans-serif;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+h1 {
+    background: linear-gradient(540deg, red 50%, black 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
