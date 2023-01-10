@@ -2,6 +2,8 @@ from django.shortcuts import render
 from requests import get
 import json
 
+from art.models import *
+
 
 # Create your views here.
 def main(request):
@@ -13,7 +15,14 @@ def demand(request):
 
 
 def geography(request):
-    return render(request, 'geography.html')
+    geo = Geography.objects.all()
+    vac = VacancyRate.objects.all()
+    c = {
+        'ge': geo,
+        'va': vac
+    }
+    print(c)
+    return render(request, 'geography.html', c)
 
 
 def skills(request):
@@ -26,9 +35,8 @@ def vacancy(request):
         'page': 0, # Индекс страницы поиска на HH
         'per_page': 8, # Кол-во вакансий на 1 странице
         'only_with_salary': True,
-        #'currency': 'NAME:Rur',
-        'date_from': "2022-12-20T21:00:00",
-        'date_to': "2022-12-22T10:00:00"
+        'date_from': "2022-12-14T21:00:00",
+        'date_to': "2022-12-16T10:00:00"
 }
 
 
@@ -36,5 +44,4 @@ def vacancy(request):
     data = req.content.decode() # Декодируем его ответ, чтобы Кириллица отображалась корректно
     req.close()
     c = json.loads(data)
-    print(c)
     return render(request, 'vacancy.html', c)
