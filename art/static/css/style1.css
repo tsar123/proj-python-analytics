@@ -50,10 +50,15 @@ a {
 }
 
 .css-main {
-    width: 78%;
+    width: 72%;
     margin-left: 1%;
-    margin-right: 1%;
+    margin-right: 7%;
     
+}
+
+.css-main img{
+    display:block;
+    margin:auto;
 }
 
 .css-main p{
@@ -96,5 +101,47 @@ a {
 
 .vacancy ul {
     list-style-type: none;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+.hexagon {
+    padding-top: 2%;
+    width: 200px;
+	height: 200px;
+	background: #c3070d;
+	position: relative;
+    margin-right: 7%;
+}
+
+.hexagon::before {
+    content: "";
+	position: absolute;
+	top: -25px; 
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 25px solid #95071c;
+}
+
+.hexagon::after {
+	content: "";
+	position: absolute;
+	bottom: -25px; 
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-top: 25px solid #6f2233;
+}
+
+.last {
+    padding-bottom: 4%;
+}
+
+.hex {
+    text-align: center;
     font-family: 'Inter Tight', sans-serif;
 }
