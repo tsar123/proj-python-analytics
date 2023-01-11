@@ -20,3 +20,13 @@ class Geography(models.Model):
 class VacancyRate(models.Model):
     city = models.CharField(max_length=40)
     rate = models.CharField(max_length=10)
+
+class LevelSalary(models.Model):
+    year = models.CharField(max_length=10)
+    averageSalary = models.CharField(max_length=10)
+    salaryDevops = models.CharField(max_length=10)
+
+class CountVacancies(models.Model):
+    year = models.CharField(max_length=10)
+    countVacancies = models.CharField(max_length=10)
+    vacanciesDevops = models.CharField(max_length=10)
