@@ -31,18 +31,18 @@
                     <h3><a href="{{ post.alternate_url }}">Вакансия "{{ post.name }}"</a></h3>
                     <ul>
                         <li>Название: {{ post.name }}</li>
-                        <li>Описание: {{ post.snippet.responsibility }}</li>
-                        <li>Навыки: {{ post.snippet.requirement }}</li>
+                        <li>Описание: {{ post.description }}</li>
+                        <li>Навыки: {{ post.key_skills }}</li>
                         <li>Компания: {{ post.employer.name }}</li>
                         {% if post.salary.from == None %}
-                            <li>Оклад: до {{ post.salary.to }}</li>
+                            <li>Оклад: до {{ post.salary.to }} {{ post.salary.currency}}</li>
                         {% elif post.salary.to == None %}
-                            <li>Оклад: от {{ post.salary.from }}</li>
+                            <li>Оклад: от {{ post.salary.from }} {{ post.salary.currency}}</li>
                         {% else %}
-                            <li>Оклад: {{ post.salary.from }} - {{ post.salary.to }}</li>
+                            <li>Оклад: {{ post.salary.from }} - {{ post.salary.to }} {{ post.salary.currency}}</li>
                         {% endif %}
                         <li>Регион: {{ post.area.name }}</li>
-                        <li>Дата публикации: 14.12.2022</li>
+                        <li>Дата публикации: {{ post.published_at }}</li>
                     </ul>
                 </div>
                 {% endfor %}

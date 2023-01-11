@@ -25,6 +25,50 @@
             </div>
             <div class="css-main">
                 <h1>DevOps-инженер</h1>
+                <h2>Востребованность</h2>
+                <div class="table1">
+                    <table>
+                        <caption><h4>Динамика уровень зарплат по годам в виде таблицы</h4></caption> 
+                        <tr>
+                            <th>Год</th>
+                            <th>Средняя зарплата, руб.</th>
+                            <th>Средняя зарплата DevOps-инженера, руб.</th>
+                        </tr>
+                        {% for post in le %}
+                        <tr>
+                            <td>{{ post.year }}</td>
+                            <td>{{ post.averageSalary }}</td>
+                            <td>{{ post.salaryDevops }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="graph1">
+                    <h4>Динамика уровень зарплат по годам в виде диаграммы</h4>
+                    <img src="https://thumb.cloud.mail.ru/thumb/xw1/Новая%20папка/уровень%20зарплат%20по%20годам.png" alt="salary level by city" width="450" height="280">
+                </div>
+                <div class="table2">
+                    <table>
+                        <caption><h4>Динамика количества вакансий по годам в виде таблицы</h4></caption> 
+                        <tr>
+                            <th>Год</th>
+                            <th>Количество вакансий, шт.</th>
+                            <th>Количество вакансий DevOps-инженера, шт.</th>
+                        </tr>
+                        {% for post in co %}
+                        <tr>
+                            <td>{{ post.year }}</td>
+                            <td>{{ post.countVacancies }}</td>
+                            <td>{{ post.vacanciesDevops }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="graph2">
+                    <h4>Динамика количества вакансий по годам в виде диаграммы</h4>
+                    <img src="https://thumb.cloud.mail.ru/thumb/xw1/Новая%20папка/количество%20вакансий%20по%20годам.png" alt="vacancy rate by city" width="450" height="280">
+                </div>
+            </div>
             </div>
         </div>
         <footer>
