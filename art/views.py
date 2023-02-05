@@ -38,7 +38,7 @@ def skills(request):
 
 def vacancy(request):
     def makeDate(args):
-        return str(datetime.strptime("2022-12-06T10:00:00", '%Y-%m-%dT%H:%M:%S').strftime('%d.%m.%Y'))
+        return str(datetime.strptime(args, '%Y-%m-%dT%H:%M:%S%z').strftime('%d.%m.%Y'))
 
     def removeTags(args):
         return " ".join(re.sub(r"\<[^>]*\>", "", args).split())
@@ -51,13 +51,13 @@ def vacancy(request):
         return ', '.join([g for g in res])
 
     params = {
-        'text': 'NAME:DevOps-инженер',
+        'text': 'NAME:DevOps',
         'page': 0,
         'per_page': 8,
         'only_with_salary': True,
-        'currency': 'RUR',
-        'date_from': "2022-12-04T21:00:00",
-        'date_to': "2022-12-06T10:00:00"
+        #'currency': 'RUR',
+        'date_from': "2023-02-01T21:00:00",
+        'date_to': "2023-02-03T10:00:00"
     }
 
     req = requests.get('https://api.hh.ru/vacancies', params)
